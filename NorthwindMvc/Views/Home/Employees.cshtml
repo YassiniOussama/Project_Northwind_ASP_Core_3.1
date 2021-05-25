@@ -1,0 +1,28 @@
+@model IEnumerable<NorthwinDB.Employee>
+
+<h2>@ViewData["Title"]</h2>
+<table class="table">
+	<tr>
+        <th>First Name</th>
+		<th>Last Name</th>
+		<th>Address</th>
+		<th>Home Phone</th>
+		<th>BirthDate</th>
+	</tr>
+	@foreach(var item in Model)
+	{
+		<tr>
+			<td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+			<td>@Html.DisplayFor(modelItem => item.LastName)</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Address)
+				@Html.DisplayFor(modelItem => item.City)
+				@Html.DisplayFor(modelItem => item.Region)
+				@Html.DisplayFor(modelItem => item.Country)
+				@Html.DisplayFor(modelItem => item.PostalCode)
+			</td>
+			<td>@Html.DisplayFor(modelItem => item.HomePhone)</td>
+            <td>@Html.DisplayFor(modelItem => item.BirthDate)</td>
+		</tr>
+	}
+</table>
